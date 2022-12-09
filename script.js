@@ -38,7 +38,8 @@ function f1(num, q){
         } else if (ask == num) {
             let answer = confirm("Поздравляю, Вы угадали!!! Хотели бы сыграть еще?");
             if (answer) {
-                return f1(displayNum(), q=10);
+                let num = Math.floor((Math.random() * 100) + 1);
+                return f1(num, q=10);
             }
         } else if (ask !== isNumber(num)){
             alert("Введи число!");
@@ -48,7 +49,8 @@ function f1(num, q){
     if (q === 0) {
         let answer = confirm("Попытки закончились, хотите сыграть еще?");
         if (answer){
-           return f1(displayNum(), q=10);
+           let num = Math.floor((Math.random() * 100) + 1);
+           return f1(num, q=10);
         }
     }
 }
