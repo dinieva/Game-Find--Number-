@@ -25,7 +25,7 @@ const isNumber = function(num) {
 
 function f1(num, q){
     if (q > 0) {
-        let ask = prompt("Угадай число от 1 до 100");
+        let ask = +prompt("Угадай число от 1 до 100");
         q--;
         if (ask === null){
             alert("Игра окончена");
@@ -35,11 +35,11 @@ function f1(num, q){
         } else if (ask < num){
             alert("Загаданное число больше, осталось попыток " + q);
             f1(num, q);
-        } else if (ask == num) {
+        } else if (ask === num) {
             let answer = confirm("Поздравляю, Вы угадали!!! Хотели бы сыграть еще?");
             if (answer) {
                 let num = Math.floor((Math.random() * 100) + 1);
-                return f1(num, q=10);
+                return f1(num, 10);
             }
         } else if (ask !== isNumber(num)){
             alert("Введи число!");
@@ -50,7 +50,7 @@ function f1(num, q){
         let answer = confirm("Попытки закончились, хотите сыграть еще?");
         if (answer){
            let num = Math.floor((Math.random() * 100) + 1);
-           return f1(num, q=10);
+           return f1(num, 10);
         }
     }
 }
